@@ -1,0 +1,378 @@
+body {
+	font: 600 16px/18px 'Open Sans',sans-serif;
+	color:#6a6f8c;
+	background-color: #474a56;
+	margin: 0;
+}
+
+*,:after,:before { 
+	box-sizing: border-box 
+}
+
+.clearfix:after, .clearfix:before { 
+	content: ''; 
+	display: table; 
+}
+
+.clearfix:after {
+	clear: both;
+	display:block
+}
+
+a { 
+	color: inherit;
+	text-decoration: none;
+}
+
+.login-wrap, .forgot-wrap, .main-wrap {
+	position: relative;
+	width: 100%;
+	height: auto;
+	max-width: 525px;
+	min-height: 670px;
+	margin: auto;
+}
+
+.login-html,
+.forgot-html {
+	position: absolute;
+	width: 100%;
+	height: 620px;
+	background: #1b2336;
+    border-radius: 30px;
+	padding: 50px;
+    margin: 50px 0px;
+}
+
+.login-html .sign-in-htm,
+.login-html .sign-up-htm {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: absolute;
+	backface-visibility: hidden;
+	transition: all .4s linear;
+}
+
+.login-html .sign-in,
+.login-html .sign-up,
+.login-form .group .check {
+	display: none;
+}
+
+.login-html .tab,
+.login-form .group .label,
+.login-form .group .button {
+	text-transform: uppercase;
+}
+
+.login-html .tab {
+	display: inline-block;
+	font-size: 22px;
+	margin: 0px 15px 10px 0px;
+}
+
+
+.login-html .sign-in:checked + .tab,
+.login-html .sign-up:checked + .tab {
+	color:#fff;
+	border-color:#ab9700;
+}
+
+.login-form {
+	min-height: 345px;
+	position: relative;
+}
+
+.login-form .group {
+	margin-bottom: 15px;
+}
+
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button {
+	display: block;
+	width: 100%;
+	color:#fff;
+}
+
+.login-form .group .input,
+.login-form .group .button {
+	background:#ffffff1a;
+	border: none;
+	border-radius: 25px;
+	padding: 15px 20px;
+}
+
+.login-form .group input[data-type="password"] {
+	text-security: circle;
+	-webkit-text-security: circle;
+}
+
+.login-form .group .label {
+	font-size: 12px;
+	color:#aaa;
+}
+
+.login-form .group .button {
+	background:#ab9700;
+    cursor: pointer;
+}
+
+.login-form .group label .icon {
+	display: inline-block;
+	position: relative;
+	width: 15px;
+	height: 15px;
+	background:#ffffff1a;
+	border-radius: 2px;
+    cursor: pointer;
+}
+
+.login-form .group label {
+    cursor: pointer;
+}  
+
+.login-form .group .check:checked + label {
+	color:#fff;
+    cursor: pointer;
+}
+
+.login-form .group .check:checked + label .icon {
+	background:#ab9700;
+}
+
+.login-html .sign-in + .tab + .sign-up + .tab + .login-form .sign-in-htm {
+	display: None;
+}
+
+.login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm {
+	display: block;
+}
+
+.login-html .sign-up + .tab + .login-form .sign-up-htm {
+	display: None;
+}
+
+.login-html .sign-up:checked + .tab + .login-form .sign-up-htm {
+	display: block;
+}
+
+input {
+	outline: none;
+}
+
+.hr {
+	height: 2px;
+	margin: 40px 0px 40px 0px;
+	background:#ffffff33;
+}
+
+.foot-lnk {
+	text-align: center;
+}
+
+.foot-lnk label {
+	cursor: pointer;
+}
+
+.forgot {
+	display: inline-block;
+    font-size: 22px;
+    color:#fff;
+}
+
+.forgot span {
+    display: block;
+    border-bottom: 2px solid #ab9700;
+    margin-top: 5px;
+}
+
+.forgot-pass label {
+	width: 100%;
+    font-size: 12px;
+    text-transform: uppercase;
+	color: #aaa;
+    cursor: pointer;
+}
+
+.forgot-pass .group input {
+    display: inline-block;
+    width: 100%;
+    background: #ffffff1a;
+    caret-color: #fff;
+    color: #fff;
+	border: none;
+    border-radius: 25px;
+	padding: 15px 20px;
+}
+
+.forgot-btn, .btn button {
+    display: flex;
+    justify-content: space-between;
+}
+
+.forgot-btn button {
+    display: inline-block;
+	width: 50px;
+    flex-grow: 1;
+    font-size: 12px;
+	text-transform: uppercase;
+	background: #ffffff1a;
+    color: #fff;
+    border: none;
+    border-radius: 11px;
+    margin: 30px 10px;
+    cursor: pointer;
+} 
+
+.forgot-btn button:hover, .btn button:hover {
+	background-color: #ab9700;
+	transform: scale(0.9);
+	-webkit-transition: all 0.35s ease-in-out;
+	-moz-transition: all 0.35s ease-in-out;
+	-ms-transition: all 0.35s ease-in-out;
+	-o-transition: all 0.35s ease-in-out;
+	transition: all 0.35s ease-in-out;
+}
+
+.forgot-btn {
+	display: flex;
+	text-decoration: none;
+	color: inherit;
+	text-align: center;
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+}
+
+.forgot-html {
+  height: 300px !important;  
+}
+
+.btn button {
+    display: inline-block;
+    flex-grow: 1;
+    font-size: 12px;
+	text-transform: uppercase;
+    background: #ffffff1a;
+    color: #fff;
+	border: none;
+    border-radius: 11px;
+	margin: 30px 10px;
+    cursor: pointer;
+}
+
+.btn {
+	display: flex;
+	text-align: center;
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+}
+
+.btn a, .fg-a {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	text-align: center;
+	padding: 1rem;
+}
+
+.main-html {
+	display: flex;
+	position: absolute;
+	width: 100%;
+    align-items: center;
+	text-align: center; 
+    justify-content: center;
+	background: #1b2336;
+    border-radius: 30px;
+	padding: 50px;
+    margin: 50px 0px;
+}
+
+.main-html h3 {
+	font-size: 28px;
+	text-align: center;
+}
+
+.main-btn {
+	display: flex;
+	justify-content: flex-end;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+
+.main-btn-conf {
+	display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+	margin-top: 10px;
+}
+
+.change-wrap {
+	position: relative;
+	width: 100%;
+    max-width: 525px;
+    min-height: 350px;
+	margin: auto;
+}
+
+.change-html {
+	position: absolute;
+	width: 100%;
+    background: #1b2336;
+    border-radius: 30px;
+	padding: 50px;
+    margin: 50px 0px;
+}
+
+.change-html h1 {
+	font-size: 28px;
+	text-align: center;
+}
+
+.change-html h3 {
+	text-align: center;
+}
+
+.change-pass .group label {
+	display: block;
+	width: 100%;
+    font-size: 12px;
+	color: #aaa;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.change-pass .group input {
+	display: block;
+	width: 100%;
+	color: #fff;
+	background: #ffffff1a;
+	border-radius: 25px;
+	border: none;
+    padding: 15px 20px;
+}
+
+.change-pass .group {
+    margin-bottom: 15px;
+}
+
+.change-btn button {
+	display: block;
+	width: 100%;
+	color: #fff;
+	background: #ab9700;
+    text-transform: uppercase;
+    border-radius: 25px;
+	border: none;
+	outline: none;
+	padding: 15px 20px;
+	margin-top: 50px;
+	cursor: pointer;
+}

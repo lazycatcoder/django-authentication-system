@@ -1,0 +1,91 @@
+{% load static %}
+
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    </head>
+
+  <body>
+
+    <div class="login-wrap">
+        <div class="login-html">
+            <div class="container">
+                <div class="main-btn">
+                    <a href="/">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+                            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
+                            <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
+                        </svg>
+                        <span>Main</span>
+                    </a>
+                </div>
+                
+            <input id="tab-1" type="radio" name="tab" class="sign-in" {% if form_type == 'login' %}checked{% endif %}><label for="tab-1" class="tab"><a href="{% url 'auth' 'login' %}">LOGIN</a></label>
+            <input id="tab-2" type="radio" name="tab" class="sign-up" {% if form_type == 'signup' %}checked{% endif %}><label for="tab-2" class="tab"><a href="{% url 'auth' 'signup' %}">SIGN UP</a></label>
+            
+            <div class="login-form">
+                {% if form_type == 'login' %}
+                    <div class="sign-in-htm"{% if form_type == 'signup' %} style="display: none;"{% endif %}>       
+                        <!-- LOGIN -->
+                        <form id="login" method="post" action="{% url 'login' %}">
+                            {% csrf_token %}
+                            <div class="group">
+                                <label for="user-login" class="label">Username</label>
+                                <input id="user-login" type="text" class="input" name="user-login">
+                            </div>
+                            <div class="group">
+                                <label for="pass" class="label">Password</label>
+                                <input id="pass" type="password" class="input" data-type="password" name="password">
+                            </div>
+                            <div class="group">
+                                <input type="submit" class="button" value="LOGIN">
+                            </div>
+                            <div class="hr"></div>
+                            <div class="foot-lnk">
+                                <a href="{% url 'forgot' %}">Forgot Password?</a>
+                            </div>
+                        </form>
+                    </div>
+                {% elif form_type == 'signup' %}
+                    <div class="sign-up-htm"{% if form_type == 'login' %} style="display: none;"{% endif %}>     
+                        <!-- SIGN UP -->
+                        <form id="singup" method="post" action="{% url 'signup' %}">
+                            {% csrf_token %}
+                            <div class="group">
+                                <label for="user-signup" class="label">Username</label>
+                                <input id="user-signup" type="text" class="input" name="username">
+                            </div>
+                            <div class="group">
+                                <label for="password1" class="label">Password</label>
+                                <input id="password1" type="password" class="input" data-type="password" name="password1">
+                            </div>
+                            <div class="group">
+                                <label for="password2" class="label">Repeat Password</label>
+                                <input id="password2" type="password" class="input" data-type="password" name="password2">
+                            </div>
+                            <div class="group">
+                                <label for="email" class="label">Email Address</label>
+                                <input id="email" type="Email" class="input"  name="email">
+                            </div>
+                            <div class="group">
+                                <input type="submit" class="button" value="Sign Up">
+                            </div>
+                            <div class="hr"></div>
+                            <div class="foot-lnk">
+                                <a href="{% url 'auth' 'login' %}">Already Member?</a>
+                            </div>       
+                        </form>    
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="{% static 'js/auth.js'%}"></script>
+
+  </body>
+
+</html>

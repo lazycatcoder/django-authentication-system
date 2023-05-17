@@ -1,0 +1,34 @@
+{% load static %}
+
+<html>
+
+    <head>
+        <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    </head>
+
+    <body>
+
+        <div class="forgot-wrap">
+            <div class="forgot-html">
+                <div class="container">
+                    <h1 class="forgot">FORGOT PASSWORD<span></span></h1>
+                    <form method="post" action="{% url 'forgot' %}">
+                        {% csrf_token %}
+                        <div class="forgot-pass">
+                            <div class="group">
+                                <label for="pass-forgot" class="label">Email Address</label>
+                                <input id="pass-forgot" type="email" name="pass-forgot" class="input">
+                            </div>
+                            <div class="forgot-btn">
+                                <button id="btn_prev" type="button"><a href="{% url 'auth' 'login' %}" class="fg-a">PREV</a></button>
+                                <button id="btn_next" type="submit">NEXT</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+</html>

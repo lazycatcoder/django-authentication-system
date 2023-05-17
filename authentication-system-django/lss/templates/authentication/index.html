@@ -1,0 +1,43 @@
+{% load static %}
+
+<html>
+
+  <head>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+  </head>
+
+  <body>
+
+    <div class="main-wrap">
+        <div class="main-html">
+            <div class="container">
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    <strong>Message:</strong> {{ message }}
+                    <button type="button" class="close" date-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endfor %}
+                
+                <h3>Welcome to Main page!</h3>
+                {% if user.is_authenticated %}
+                    <h3>Hello, {{ username }}</h3>
+                    <h4>You're successfully logged in.</h4> 
+                    <div class="btn">  
+                        <button type="submit"><a href="{% url 'signout' %}">Log out</a></button>
+                    </div>
+                {% else %}
+                    <div class="btn">
+                        <button type="submit"><a href="{% url 'auth' 'login' %}">Login</a></button>
+                        <button type="submit"><a href="{% url 'auth' 'signup' %}">Sign up</a></button>
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+    
+  </body>
+
+</html>
